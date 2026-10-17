@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#5c982f">
+  <meta name="description" content="Download Scurz FPS Plus, an unofficial community update of Scurz's Minecraft Java resource pack by NotGriaz. Browse builds and Minecraft versions fetched from GitHub Releases.">
+  <meta property="og:title" content="Scurz FPS Plus | Minecraft Resource Pack">
+  <meta property="og:description" content="Original by Scurz. Compatibility updates by NotGriaz. Download available builds directly from GitHub Releases.">
+  <title>Scurz FPS Plus — Minecraft Resource Pack</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Scurz FPS Plus home">
+        <span class="grass-cube" aria-hidden="true"><i></i><b></b></span>
+        <span><strong>SCURZ FPS PLUS</strong><small>MINECRAFT RESOURCE PACK</small></span>
+      </a>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="#downloads">Downloads</a>
+        <a href="#versions">Versions</a>
+        <a href="#install">Install</a>
+        <a class="github-link" href="https://github.com/faisaljs/Scurz-FPS-Plus" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="pixel-dot"></span> COMMUNITY UPDATE PROJECT</p>
+          <h1>SCURZ<br><span>FPS PLUS</span></h1>
+          <p class="hero-text">The original pack by <strong>Scurz</strong>, with compatibility updates by <strong>NotGriaz</strong>. Browse available builds and download them straight from GitHub.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" id="hero-download" href="https://github.com/faisaljs/Scurz-FPS-Plus/releases" target="_blank" rel="noopener noreferrer">View downloads <span aria-hidden="true">↓</span></a>
+            <a class="button button-outline" href="#versions">Check versions</a>
+          </div>
+          <p class="hero-note"><span class="status-dot"></span> Currently supported: Java 1.20 and 1.20.1 · More versions planned</p>
+        </div>
+        <div class="voxel-scene" aria-label="Minecraft-inspired grass and dirt blocks" role="img">
+          <div class="sun-block"></div>
+          <div class="floating-block block-back"><i></i></div>
+          <div class="floating-block block-front"><i></i></div>
+          <div class="scene-tag"><span class="scene-tag-icon">✦</span><span>FPS PLUS<small>JAVA EDITION</small></span></div>
+          <div class="grass-platform"><div></div><span></span></div>
+        </div>
+      </section>
+
+      <section class="quick-info" aria-label="Project facts">
+        <div class="quick-info-item"><span class="info-icon">▦</span><span><small>EDITION</small><strong>Java Edition</strong></span></div>
+        <div class="quick-info-item"><span class="info-icon">⬇</span><span><small>DOWNLOADS</small><strong id="download-count">Loading releases…</strong></span></div>
+        <div class="quick-info-item"><span class="info-icon">◈</span><span><small>PROJECT STATUS</small><strong>Ongoing updates</strong></span></div>
+      </section>
+
+      <section class="section downloads-section" id="downloads">
+        <div class="section-heading">
+          <div><p class="section-kicker">YOUR NEXT BUILD</p><h2>Pack downloads<span class="heading-period">.</span></h2><p class="section-description">Versions and download links load automatically from the project’s GitHub Releases.</p></div>
+          <button class="button button-small button-light" id="refresh-button" type="button"><span aria-hidden="true">↻</span> Refresh</button>
+        </div>
+        <div id="load-status" class="load-status" role="status" aria-live="polite"><span class="spinner" aria-hidden="true"></span> Checking GitHub for releases…</div>
+        <div class="release-grid" id="release-list" aria-live="polite"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <div class="empty-cube" aria-hidden="true"><span></span></div>
+          <h3>No pack downloads yet</h3>
+          <p>When a GitHub Release contains a resource-pack <code>.zip</code>, it will appear here with a direct download button. No need to edit this website for each new version.</p>
+          <a class="button button-primary" href="https://github.com/faisaljs/Scurz-FPS-Plus/releases" target="_blank" rel="noopener noreferrer">Open GitHub Releases <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="error-state" id="error-state" hidden role="alert">
+          <strong>Could not load releases.</strong>
+          <p>Check your connection or confirm that the GitHub repository is public. You can still open the repository directly.</p>
+          <a href="https://github.com/faisaljs/Scurz-FPS-Plus/releases" target="_blank" rel="noopener noreferrer">Open GitHub Releases ↗</a>
+        </div>
+      </section>
+
+      <section class="section versions-section" id="versions">
+        <div class="section-heading">
+          <div><p class="section-kicker">COMPATIBILITY</p><h2>Find your version<span class="heading-period">.</span></h2><p class="section-description">Detected from published release names, notes and asset filenames.</p></div>
+        </div>
+        <div class="version-toolbar"><label for="version-filter">Minecraft version</label><select id="version-filter"><option value="all">All versions</option></select><span id="version-source" class="version-source">Waiting for GitHub…</span></div>
+        <div class="supported-note"><span class="note-cube" aria-hidden="true">✓</span><p><strong>Current project target: Java 1.20 and 1.20.1.</strong><br>Support for other versions will be marked as builds are updated and tested.</p></div>
+      </section>
+
+      <section class="section install-section" id="install">
+        <div class="section-heading"><div><p class="section-kicker">UP AND RUNNING</p><h2>Install the pack<span class="heading-period">.</span></h2><p class="section-description">A quick setup for Minecraft Java Edition.</p></div></div>
+        <div class="install-steps">
+          <article class="step-card"><span class="step-number">01</span><div class="step-icon">⬇</div><h3>Download</h3><p>Choose the build that matches your Minecraft version and download the resource-pack ZIP.</p></article>
+          <article class="step-card"><span class="step-number">02</span><div class="step-icon">▤</div><h3>Open folder</h3><p>In Minecraft, go to <strong>Options → Resource Packs → Open Pack Folder</strong>.</p></article>
+          <article class="step-card"><span class="step-number">03</span><div class="step-icon">✓</div><h3>Enable</h3><p>Move the ZIP into the folder, return to Minecraft and enable Scurz FPS Plus.</p></article>
+        </div>
+      </section>
+
+      <section class="credits-panel" id="credits">
+        <div class="credits-block"><span class="credits-label">ORIGINAL CREATOR</span><strong>Scurz</strong></div>
+        <span class="credits-divider" aria-hidden="true">+</span>
+        <div class="credits-block"><span class="credits-label">UPDATES & COMPATIBILITY</span><strong>NotGriaz</strong></div>
+        <p class="credits-disclaimer">Unofficial community update. Original work remains credited to Scurz and its respective owners.</p>
+      </section>
+    </main>
+
+    <footer class="footer"><a class="footer-brand" href="#top">▰ SCURZ FPS PLUS</a><span>Made for the Minecraft community.</span><a href="https://github.com/faisaljs/Scurz-FPS-Plus" target="_blank" rel="noopener noreferrer">View source on GitHub ↗</a></footer>
+  </div>
+</body>
+</html>
